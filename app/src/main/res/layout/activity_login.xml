@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#f2f2f2"
+    tools:context=".LoginActivity"
+
+    >
+
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:id="@+id/banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:paddingStart="10dp"
+            android:text="Authentifiez-Vous"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+    <!-- Login layout -->
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+
+            android:paddingStart="10dp"
+            android:text="Login         : "
+            android:textColor="#FF0000"
+
+            android:textStyle="bold"
+
+            />
+
+        <EditText
+
+            android:id="@+id/login"
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+
+            android:hint=" E-mail ou CIN "
+            android:inputType="text"
+
+            android:paddingStart="10dp"
+
+            />
+
+    </LinearLayout>
+
+    <!--Password layout -->
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="Password : "
+
+            android:textColor="#FF0000"
+
+            android:textStyle="bold"
+
+            />
+
+        <EditText
+
+            android:id="@+id/password"
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:hint="Password"
+            android:inputType="textPassword"
+
+            android:paddingStart="10dp"
+
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        >
+
+        <Button
+
+            android:id="@+id/valider"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="25dip"
+
+            android:layout_marginRight="25dip"
+
+            android:layout_weight="1"
+
+            android:text="S'authentifier"
+
+            />
+
+    </LinearLayout>
+    <TextView
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="Résultat:"
+
+        />
+
+    <TextView
+
+        android:id="@+id/result"
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="fill_parent"
+
+        android:text="Vous devez cliquer sur le bouton « Calculer l'IMC » pour obtenir un résultat."
+
+        />
+
+</LinearLayout>
+
