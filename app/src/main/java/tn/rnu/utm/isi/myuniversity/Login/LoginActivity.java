@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (response.body() != null) {
                     Toast.makeText(LoginActivity.this, " Success Token" + response.body().getAccess_token(), Toast.LENGTH_SHORT).show();
-                    start_processes(v);
+                    start_processes(v,response.body().getAccess_token());
                 } else {
                     Toast.makeText(LoginActivity.this, "Something went wrong <authentication error>", Toast.LENGTH_SHORT).show();
                 }
@@ -84,9 +84,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void start_processes(View v) {
+    public void start_processes(View v,String token) {
         Intent i = new Intent(this, ProcessesActivity.class);
         // TODO putextra
+        i.putExtra("Token",token);
         startActivity(i);
 
     }

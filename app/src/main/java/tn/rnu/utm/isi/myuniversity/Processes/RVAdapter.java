@@ -31,10 +31,10 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         }
     }
 
-    List<Person> persons;
+    List<Case> cases;
 
-    RVAdapter(List<Person> persons){
-        this.persons = persons;
+    RVAdapter(List<Case> cases){
+        this.cases = cases;
     }
 
   /*  @Override
@@ -51,13 +51,13 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
 
     @Override
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
-        personViewHolder.personName.setText(persons.get(i).name);
-        personViewHolder.personAge.setText(persons.get(i).age);
-        personViewHolder.personPhoto.setImageResource(persons.get(i).photoId);
+        personViewHolder.personName.setText(cases.get(i).getPro_title());
+        personViewHolder.personAge.setText(cases.get(i).getPro_uid());
+        //personViewHolder.personPhoto.setImageResource(cases.get(i).photoId);
     }
 
     @Override
     public int getItemCount() {
-        return persons.size();
+        return cases.size();
     }
 }
