@@ -1,4 +1,4 @@
-package tn.rnu.utm.isi.myuniversity;
+package tn.rnu.utm.isi.myuniversity.Processes;
 
 
         import android.app.Activity;
@@ -7,6 +7,8 @@ package tn.rnu.utm.isi.myuniversity;
         import java.util.List;
         import android.support.v7.widget.LinearLayoutManager;
         import android.support.v7.widget.RecyclerView;
+
+        import tn.rnu.utm.isi.myuniversity.R;
 
 
 public class ProcessesActivity extends Activity {
@@ -29,6 +31,9 @@ public class ProcessesActivity extends Activity {
         initializeData();
         initializeAdapter();
     }
+
+
+  String response= " [{\"app_uid\": \"50576446953235bfb797531078087088\",\"del_index\": \"1\",\"del_last_index\": \"1\",\"app_number\": \"1\",\"app_status\": \"ID_DRAFT\",\"usr_uid\": \"00000000000000000000000000000001\"\"previous_usr_uid\": \"\",\"tas_uid\": \"7983935495320c1a75e1df6068322280\",\"pro_uid\"    }]";
 
     private void initializeData(){
         persons = new ArrayList<>();

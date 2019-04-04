@@ -1,4 +1,4 @@
-package tn.rnu.utm.isi.myuniversity;
+package tn.rnu.utm.isi.myuniversity.Processes;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import tn.rnu.utm.isi.myuniversity.R;
 
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {

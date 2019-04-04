@@ -1,4 +1,4 @@
-package tn.rnu.utm.isi.myuniversity;
+package tn.rnu.utm.isi.myuniversity.Processes;
 
 class Person {
     String name;

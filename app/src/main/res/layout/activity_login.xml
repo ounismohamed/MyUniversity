@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:background="#f2f2f2"
-    tools:context=".LoginActivity"
+    tools:context=".Login.LoginActivity"
 
     >
 
@@ -25,7 +25,7 @@
             android:id="@+id/banner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
             android:paddingStart="10dp"
@@ -75,6 +75,7 @@
             android:inputType="text"
 
             android:paddingStart="10dp"
+            android:layout_marginRight="20dp"
 
             />
 
@@ -117,9 +118,9 @@
             android:layout_height="wrap_content"
 
             android:layout_weight="1"
-            android:hint="Password"
+            android:hint="Mot de passe"
             android:inputType="textPassword"
-
+            android:layout_marginRight="20dp"
             android:paddingStart="10dp"
 
             />
@@ -146,6 +147,7 @@
 
             android:layout_height="wrap_content"
 
+            android:layout_marginTop="100dp"
             android:layout_marginLeft="25dip"
 
             android:layout_marginRight="25dip"
@@ -157,27 +159,6 @@
             />
 
     </LinearLayout>
-    <TextView
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:text="Résultat:"
-
-        />
-
-    <TextView
-
-        android:id="@+id/result"
-
-        android:layout_width="fill_parent"
-
-        android:layout_height="fill_parent"
-
-        android:text="Vous devez cliquer sur le bouton « Calculer l'IMC » pour obtenir un résultat."
-
-        />
 
 </LinearLayout>
 
