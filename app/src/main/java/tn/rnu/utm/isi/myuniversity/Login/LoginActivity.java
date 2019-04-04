@@ -1,14 +1,13 @@
 package tn.rnu.utm.isi.myuniversity.Login;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,17 +42,18 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String username= new String(login_et.getText().toString());
+                String username = new String(login_et.getText().toString());
 
-                String password= new String(password_et.getText().toString());
+                String password = new String(password_et.getText().toString());
 
-                TokenRequest tokenRequest = new TokenRequest("password","*","SJGZDWXOPLJZLBDQGACCAGAVWSHORHJK","6734914665b5258c7a2eb01077382585",username,password);
-                sendNetworkRequest(tokenRequest,v);
+                TokenRequest tokenRequest = new TokenRequest("password", "*", "SJGZDWXOPLJZLBDQGACCAGAVWSHORHJK", "6734914665b5258c7a2eb01077382585", username, password);
+                sendNetworkRequest(tokenRequest, v);
             }
         });
 
     }
-    private void sendNetworkRequest(TokenRequest tokenRequest, final View v){
+
+    private void sendNetworkRequest(TokenRequest tokenRequest, final View v) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://process.isiforge.tn")
@@ -67,13 +67,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<TokenResponse> call, Response<TokenResponse> response) {
 
-                if (response.body()!=null) {
+                if (response.body() != null) {
                     Toast.makeText(LoginActivity.this, " Success Token" + response.body().getAccess_token(), Toast.LENGTH_SHORT).show();
                     start_processes(v);
+                } else {
+                    Toast.makeText(LoginActivity.this, "Something went wrong <authentication error>", Toast.LENGTH_SHORT).show();
                 }
-                else
-                { Toast.makeText(LoginActivity.this, "Something went wrong <authentication error>", Toast.LENGTH_SHORT).show();}
-                }
+            }
 
             @Override
             public void onFailure(Call<TokenResponse> call, Throwable t) {
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-public void start_processes (View v){
+    public void start_processes(View v) {
         Intent i = new Intent(this, ProcessesActivity.class);
         // TODO putextra
         startActivity(i);
