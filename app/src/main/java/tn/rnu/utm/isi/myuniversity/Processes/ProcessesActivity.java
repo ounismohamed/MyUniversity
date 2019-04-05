@@ -20,7 +20,7 @@ import tn.rnu.utm.isi.myuniversity.R;
 
 public class ProcessesActivity extends Activity {
 
-    private List<Person> persons;
+
     private RecyclerView rv;
 
     @Override
@@ -57,64 +57,16 @@ public class ProcessesActivity extends Activity {
 
                 initializeAdapter(cases);
 
-      /*
-                initializeData();
 
-   */
-
-
-/*
-
-                for (Case case:cases){
-                    String content="";
-                    content+="ID: "+case.getId()+"\n";
-                    content+="USER-ID: "+case.getUserId()+"\n";
-                    content+="Title: "+case.getTitle()+"\n";
-                    content+="Text: "+case.getText()+"\n\n";
-
-                    textViewResult.append(content);
-
-                }*/
             }
 
             @Override
             public void onFailure(Call<List<Case>> call, Throwable t) {
-  //              textViewResult.setText(t.getMessage());
             }
         });
-
-
-
-
-
-
-
-
-
-
     }
 
 
-  String response= " [{\"app_uid\": \"50576446953235bfb797531078087088\",\"del_index\": \"1\",\"del_last_index\": \"1\",\"app_number\": \"1\",\"app_status\": \"ID_DRAFT\",\"usr_uid\": \"00000000000000000000000000000001\"\"previous_usr_uid\": \"\",\"tas_uid\": \"7983935495320c1a75e1df6068322280\",\"pro_uid\"    }]";
-
-/*    private void initializeData(){
-        cases = new ArrayList<>();
-        cases.add(new Person("Emma Wilson", "23 years old", R.drawable.emma));
-        cases.add(new Person("Lavery Maiss", "25 years old", R.drawable.lavery));
-        cases.add(new Person("Lillie Watts", "35 years old", R.drawable.lillie));
-        cases.add(new Person("Emma Wilson", "23 years old", R.drawable.emma));
-        cases.add(new Person("Lavery Maiss", "25 years old", R.drawable.lavery));
-        cases.add(new Person("Lillie Watts", "35 years old", R.drawable.lillie));
-        cases.add(new Person("Emma Wilson", "23 years old", R.drawable.emma));
-        cases.add(new Person("Lavery Maiss", "25 years old", R.drawable.lavery));
-        cases.add(new Person("Lillie Watts", "35 years old", R.drawable.lillie));
-        cases.add(new Person("Emma Wilson", "23 years old", R.drawable.emma));
-        cases.add(new Person("Lavery Maiss", "25 years old", R.drawable.lavery));
-        cases.add(new Person("Lillie Watts", "35 years old", R.drawable.lillie));
-        cases.add(new Person("Emma Wilson", "23 years old", R.drawable.emma));
-        cases.add(new Person("Lavery Maiss", "25 years old", R.drawable.lavery));
-        cases.add(new Person("Lillie Watts", "35 years old", R.drawable.lillie));
-    }*/
     private void initializeAdapter(List<Case> cases){
         RVAdapter adapter = new RVAdapter(cases);
         rv.setAdapter(adapter);

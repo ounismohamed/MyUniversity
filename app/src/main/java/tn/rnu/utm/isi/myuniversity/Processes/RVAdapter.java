@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -13,22 +12,13 @@ import java.util.List;
 import tn.rnu.utm.isi.myuniversity.R;
 
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
+public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CaseViewHolder> {
 
-    public static class PersonViewHolder extends RecyclerView.ViewHolder {
-
-        CardView cv;
-        TextView personName;
-        TextView personAge;
-        ImageView personPhoto;
-
-        PersonViewHolder(View itemView) {
-            super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.cv);
-            personName = (TextView)itemView.findViewById(R.id.person_name);
-            personAge = (TextView)itemView.findViewById(R.id.person_age);
-            personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
-        }
+    @Override
+    public CaseViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item, viewGroup, false);
+        CaseViewHolder cvh = new CaseViewHolder(v);
+        return cvh;
     }
 
     List<Case> cases;
@@ -43,17 +33,25 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
     }*/
 
     @Override
-    public PersonViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item, viewGroup, false);
-        PersonViewHolder pvh = new PersonViewHolder(v);
-        return pvh;
+    public void onBindViewHolder(CaseViewHolder caseViewHolder, int i) {
+        caseViewHolder.pro_title.setText(cases.get(i).getPro_title());
+        caseViewHolder.pro_uid.setText(cases.get(i).getPro_uid());
     }
 
-    @Override
-    public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
-        personViewHolder.personName.setText(cases.get(i).getPro_title());
-        personViewHolder.personAge.setText(cases.get(i).getPro_uid());
-        //personViewHolder.personPhoto.setImageResource(cases.get(i).photoId);
+    public static class CaseViewHolder extends RecyclerView.ViewHolder {
+
+        CardView cv;
+        TextView pro_title;
+        TextView pro_uid;
+//        ImageView casePhoto;
+
+        CaseViewHolder(View itemView) {
+            super(itemView);
+            cv = (CardView)itemView.findViewById(R.id.cv);
+            pro_title = (TextView)itemView.findViewById(R.id.pro_title);
+            pro_uid = (TextView)itemView.findViewById(R.id.pro_uid);
+//            casePhoto = (ImageView)itemView.findViewById(R.id.case_photo);
+        }
     }
 
     @Override
